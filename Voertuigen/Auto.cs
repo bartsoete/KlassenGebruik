@@ -15,7 +15,7 @@ namespace Voertuigen
         public int MaximumSnelheid { get; private set; }
         public int ActueleSnelheid { get; private set; }
         public Merken Merk { get; set; }
-
+        private static Random rd = new Random();
 
         // Constructor aangemaakt bij het intiantiëren van een wagen dienen deze velden minimaal ingegeven
         public Auto(Merken merk, Kleur kleur, int aantalPlaatsen, int maxSnelheid)
@@ -25,6 +25,16 @@ namespace Voertuigen
             MaximumSnelheid = maxSnelheid;
             AantalPlaatsen = aantalPlaatsen;
         }
+
+        // Constructor voor de aanmaak van een Random Auto
+        public Auto()
+        {
+            Merk = (Merken)rd.Next(0, Enum.GetNames(typeof(Merken)).Length);
+            KleurAuto = (Kleur)rd.Next(0, Enum.GetNames(typeof(Kleur)).Length);
+            AantalPlaatsen = rd.Next(2, 6);
+            MaximumSnelheid = rd.Next(150, 300);
+        }
+
 
         public void Versnel(int waarde)
         {

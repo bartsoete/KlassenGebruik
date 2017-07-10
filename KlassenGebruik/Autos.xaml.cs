@@ -42,6 +42,16 @@ namespace KlassenGebruik
             cmbKleur.SelectedIndex = 0;
             cmbMerk.SelectedIndex = 0;
 
+            // Opvullen van de ListBox met Random Autos
+            for(int i =0; i<10; i++)
+            {
+                Auto nieuweAuto = new Auto();
+                lstAutos.Items.Add(nieuweAuto);
+            }
+
+            // Netjes Selectie van eerste wagen
+            lstAutos.SelectedIndex = 0;
+
         }
 
         private void btnVoegToe_Click(object sender, RoutedEventArgs e)
