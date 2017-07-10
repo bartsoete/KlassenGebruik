@@ -59,5 +59,37 @@ namespace KlassenGebruik
                 MessageBox.Show("Kan niet invoegen, foutieve ingave \nReden :\t" + ex.Message, "Foutmelding");
             }
         }
+
+        private void btnVersnel_Click(object sender, RoutedEventArgs e)
+        {
+            Auto geselecteerdeWagen = (Auto)lstAutos.SelectedItem;
+            geselecteerdeWagen.Versnel(20);
+            tbActSnelheid.Text = geselecteerdeWagen.ActueleSnelheid.ToString();
+        }
+
+        private void btnVertraag_Click(object sender, RoutedEventArgs e)
+        {
+            Auto geselecteerdeWagen = (Auto)lstAutos.SelectedItem;
+            geselecteerdeWagen.Vertraag(20);
+            tbActSnelheid.Text = geselecteerdeWagen.ActueleSnelheid.ToString();
+        }
+
+        private void lstAutos_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (lstAutos.SelectedItem != null)
+            {
+                Auto geselecteerdeWagen = (Auto)lstAutos.SelectedItem;
+                tbMerk.Text = geselecteerdeWagen.Merk.ToString();
+                tbKleur.Text = geselecteerdeWagen.KleurAuto.ToString();
+                tbPlaatsen.Text = geselecteerdeWagen.AantalPlaatsen.ToString();
+                tbMaxSnelheid.Text = geselecteerdeWagen.MaximumSnelheid.ToString();
+                tbActSnelheid.Text = geselecteerdeWagen.ActueleSnelheid.ToString();
+
+            }
+        }
+
+
+
+
     }
 }

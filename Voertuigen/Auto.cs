@@ -8,7 +8,7 @@ namespace Voertuigen
 {
     public class Auto
     {
-        public enum Kleur { Groen, Oranje, Rood, Awart }
+        public enum Kleur { Groen, Oranje, Rood, Zwart }
         public enum Merken { BMW, Volkswagen, Ford, Mercedes }
         public Kleur KleurAuto { get; set; }
         public int AantalPlaatsen { get; set; }
@@ -26,19 +26,21 @@ namespace Voertuigen
             AantalPlaatsen = aantalPlaatsen;
         }
 
-        public void Verhoogsnelheid(int waarde)
+        public void Versnel(int waarde)
         {
-            if (ActueleSnelheid < MaximumSnelheid)
-            { 
             ActueleSnelheid += waarde;
+            if (ActueleSnelheid > MaximumSnelheid)
+            { 
+             ActueleSnelheid = MaximumSnelheid;
             }
         }
 
-        public void VerlaagSnelheid(int waarde)
+        public void Vertraag(int waarde)
         {
-            if (ActueleSnelheid > 0)
-            { 
             ActueleSnelheid -= waarde;
+            if (ActueleSnelheid < 0)
+            { 
+            ActueleSnelheid = 0;
             }
         }
 

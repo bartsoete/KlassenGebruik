@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:KlassenGebruik"
         mc:Ignorable="d"
-        Title="Autos" Height="526.298" Width="300" Background="LightBlue" Loaded="Window_Loaded">
+        Title="Autos" Height="526.298" Width="585.913" Background="LightBlue" Loaded="Window_Loaded">
     <Grid>
         <GroupBox Header="Voeg Wagens Toe" HorizontalAlignment="Left" Height="184" Margin="10,10,0,0" VerticalAlignment="Top" Width="272">
             <Grid >
@@ -20,9 +20,25 @@
                 <Button x:Name="btnVoegToe" Content="Voeg Wagen Toe" HorizontalAlignment="Left" Margin="86,139,0,0" Height="20" VerticalAlignment="Top" Click="btnVoegToe_Click"/>
             </Grid>
         </GroupBox>
-        <GroupBox Header="Beschikbare Autos" HorizontalAlignment="Left" Height="262" Margin="10,223,0,0" VerticalAlignment="Top" Width="272">
+        <GroupBox Header="Beschikbare Autos" HorizontalAlignment="Left" Height="195" Margin="10,223,0,0" VerticalAlignment="Top" Width="272">
             <Grid >
-                <ListBox x:Name="lstAutos" HorizontalAlignment="Left" Height="144" Margin="37,10,0,0" VerticalAlignment="Top" Width="183"/>
+                <ListBox x:Name="lstAutos" HorizontalAlignment="Left" Height="144" Margin="37,10,0,0" VerticalAlignment="Top" Width="183" SelectionChanged="lstAutos_SelectionChanged"/>
+            </Grid>
+        </GroupBox>
+        <GroupBox Header="Eigenschappen Geselecteerd" HorizontalAlignment="Left" Height="197" Margin="307,221,0,0" VerticalAlignment="Top" Width="227">
+            <Grid >
+                <TextBlock HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" Text="Merk :" VerticalAlignment="Top"/>
+                <TextBlock HorizontalAlignment="Left" Margin="10,31,0,0" TextWrapping="Wrap" Text="Kleur :" VerticalAlignment="Top" RenderTransformOrigin="0.556,-0.521"/>
+                <TextBlock HorizontalAlignment="Left" Margin="10,52,0,0" TextWrapping="Wrap" Text="Plaatsen :" VerticalAlignment="Top"/>
+                <TextBlock HorizontalAlignment="Left" Margin="10,73,0,0" TextWrapping="Wrap" Text="Max. Snelheid :" VerticalAlignment="Top"/>
+                <TextBlock x:Name="tbMerk" HorizontalAlignment="Left" Margin="75,10,0,0" TextWrapping="Wrap" Text="-" VerticalAlignment="Top"/>
+                <TextBlock x:Name="tbKleur" HorizontalAlignment="Left" Margin="68,31,0,0" TextWrapping="Wrap" Text="-" VerticalAlignment="Top"/>
+                <TextBlock x:Name="tbPlaatsen" HorizontalAlignment="Left" Margin="75,52,0,0" TextWrapping="Wrap" Text="-" VerticalAlignment="Top"/>
+                <TextBlock x:Name="tbMaxSnelheid" HorizontalAlignment="Left" Margin="110,73,0,0" TextWrapping="Wrap" Text="-" VerticalAlignment="Top"/>
+                <TextBlock HorizontalAlignment="Left" Margin="10,94,0,0" TextWrapping="Wrap" Text="Act. Snelheid :" VerticalAlignment="Top"/>
+                <TextBlock x:Name="tbActSnelheid" HorizontalAlignment="Left" Margin="102,94,0,0" TextWrapping="Wrap" Text="-" VerticalAlignment="Top"/>
+                <Button x:Name="btnVersnel" Content="Versnel" HorizontalAlignment="Left" Margin="10,130,0,0" VerticalAlignment="Top" Width="75" Click="btnVersnel_Click"/>
+                <Button x:Name="btnVertraag" Content="Vertraag" HorizontalAlignment="Left" Margin="115,130,0,0" VerticalAlignment="Top" Width="75" Click="btnVertraag_Click"/>
             </Grid>
         </GroupBox>
 
