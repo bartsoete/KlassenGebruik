@@ -42,7 +42,7 @@ namespace KlassenGebruik
             cmbKleur.SelectedIndex = 0;
             cmbMerk.SelectedIndex = 0;
 
-            // Opvullen van de ListBox met Random Autos
+            // Opvullen van de ListBox met Random Autos gebruikmakend van de constructor zonder parameters
             for(int i =0; i<10; i++)
             {
                 Auto nieuweAuto = new Auto();
