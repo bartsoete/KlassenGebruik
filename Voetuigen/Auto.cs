@@ -1,10 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace Voertuigen
+namespace Voetuigen
 {
     public class Auto
     {
@@ -12,13 +8,13 @@ namespace Voertuigen
         public enum Merken { BMW, Volkswagen, Ford, Mercedes }
         public Kleur KleurAuto { get; set; }
         public int AantalPlaatsen { get; set; }
-        public decimal MaximumSnelheid { get; private set; }
-        public decimal ActueleSnelheid { get; private set; }
+        public int MaximumSnelheid { get; private set; }
+        public int ActueleSnelheid { get; private set; }
         public Merken Merk { get; set; }
         private static Random rd = new Random();
 
         // Constructor aangemaakt bij het intiantiëren van een wagen dienen deze velden minimaal ingegeven
-        public Auto(Merken merk, Kleur kleur, int aantalPlaatsen, decimal maxSnelheid)
+        public Auto(Merken merk, Kleur kleur, int aantalPlaatsen, int maxSnelheid)
         {
             Merk = merk;
             KleurAuto = kleur;
@@ -36,28 +32,28 @@ namespace Voertuigen
         }
 
 
-        public void Versnel(decimal waarde)
+        public void Versnel(int waarde)
         {
             ActueleSnelheid += waarde;
             if (ActueleSnelheid > MaximumSnelheid)
-            { 
-             ActueleSnelheid = MaximumSnelheid;
+            {
+                ActueleSnelheid = MaximumSnelheid;
             }
         }
 
-        public void Vertraag(decimal waarde)
+        public void Vertraag(int waarde)
         {
             ActueleSnelheid -= waarde;
             if (ActueleSnelheid < 0)
-            { 
-            ActueleSnelheid = 0;
+            {
+                ActueleSnelheid = 0;
             }
         }
 
         // Weergeven van de Auto met een override ToString() => Netjes weergeven in de Listbox
         public override string ToString()
         {
-            return Merk + "(" + KleurAuto + ")"; 
+            return Merk + "(" + KleurAuto + ")";
         }
     }
 }
